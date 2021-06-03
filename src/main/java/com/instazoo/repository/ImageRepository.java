@@ -1,4 +1,4 @@
-package com.instazoo.service;
+package com.instazoo.repository;
 
 import com.instazoo.entity.ImageModel;
 import org.springframework.data.jpa.repository.JpaRepository;

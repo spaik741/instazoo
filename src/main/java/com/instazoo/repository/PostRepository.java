@@ -1,4 +1,4 @@
-package com.instazoo.service;
+package com.instazoo.repository;
 
 import com.instazoo.entity.Post;
 import com.instazoo.entity.User;
