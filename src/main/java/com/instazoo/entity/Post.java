@@ -19,7 +19,7 @@ public class Post {
     private String title;
     private String caption;
     private String location;
-    private String likes;
+    private Integer likes;
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
     @Column(updatable = false)
