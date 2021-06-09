@@ -20,7 +20,6 @@ import java.util.Optional;
 
 @Service
 public class PostService {
-
     public static final Logger LOG = LoggerFactory.getLogger(PostService.class);
 
     @Autowired
@@ -52,12 +51,12 @@ public class PostService {
                 .orElseThrow(() -> new PostNotFoundException("Post cannot be found for username: " + user.getEmail()));
     }
 
-    public List<Post> getAllPostsForUser(Principal principal) {
+    public List<Post> getAllPostForUser(Principal principal) {
         User user = getUserByPrincipal(principal);
         return postRepository.findAllByUserOrderByCreatedDateDesc(user);
     }
 
-    public Post likedPost(Long postId, String username) {
+    public Post likePost(Long postId, String username) {
         Post post = postRepository.findById(postId).orElseThrow(() -> new PostNotFoundException("Post cannot be found"));
         Optional<String> userLiked = post.getLikedUsers().stream().filter((u) -> u.equals(username)).findAny();
 
